@@ -10,10 +10,10 @@ class Solution:
     def encode(self, strs):
         res = ""
         for s in strs:
-            res += str(len(s))+ "#" + s
+            res += str(len(s)) + "#" + s
         print(res)
         return res
-    
+
     def decode(self, str):
         res, i = [], 0
 
@@ -23,12 +23,12 @@ class Solution:
             # Loop till you get to the delimeter
             while str[j] != "#":
                 j += 1
-            print(i,j)
+            print(i, j)
             # The length will be the substring from initial position to delimeter
             length = int(str[i:j])
 
-            # Take substring ahead of delim index (j) to the length         
-            res.append(str[j+1:j+1+length])
+            # Take substring ahead of delim index (j) to the length
+            res.append(str[j + 1 : j + 1 + length])
 
             # Increment i to new starting point
             i = j + 1 + length
@@ -36,7 +36,8 @@ class Solution:
         print(res)
         return res
 
+
 # test
 s = Solution()
-encoded = s.encode(["the","very#","next","#"])
+encoded = s.encode(["the", "very#", "next", "#"])
 s.decode(encoded)
